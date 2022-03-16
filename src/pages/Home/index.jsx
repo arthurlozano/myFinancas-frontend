@@ -1,12 +1,14 @@
 import { Header } from "../../components/Header";
 import { Information } from "../../components/Information";
-import './styles.css'
+import { InputsContainer } from "../../components/InputsContainer";
+import './styles.css';
 
 export function Home() {
   return (
-    <div classname="container">
+    <div className="container-main">
       <Header />
       <Information />
+      <InputsContainer />
     </div>
   )
 }
