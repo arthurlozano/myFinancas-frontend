@@ -1,5 +1,6 @@
 import { Header } from "../../components/Header";
 import { Information } from "../../components/Information";
+import { InfoTable } from "../../components/InfoTable";
 import { InputsContainer } from "../../components/InputsContainer";
 import './styles.css';
 
@@ -9,6 +10,7 @@ export function Home() {
       <Header />
       <Information />
       <InputsContainer />
+      <InfoTable />
     </div>
   )
 }
