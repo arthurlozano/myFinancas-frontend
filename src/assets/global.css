@@ -9,6 +9,11 @@
 body {
   background-color: #292929;
   font-family: 'Roboto', sans-serif;
+  /*background-image: url('https://cdn.wallpapersafari.com/54/81/YWO8us.jpg'); 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100%;*/
 }
 
 input {

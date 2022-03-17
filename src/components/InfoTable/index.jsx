@@ -10,11 +10,11 @@ import './styles.css'
 export function InfoTable() {
   return (
     <div className="container-infoTable">
-      <TableContainer sx={{
+      <TableContainer /*sx={{
         background: '#000',
         color: '#fff',
         borderRadius: 10,
-      }}>
+      }} */>
         <Table size="small" aria-label="a dense table">
           <TableHead>
             <TableRow>
@@ -25,6 +25,22 @@ export function InfoTable() {
             </TableRow>
           </TableHead>
           <TableBody>
+            <TableRow
+              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+            >
+              <TableCell sx={{ color: '#FFF' }} align="center">10/10/2020</TableCell>
+              <TableCell sx={{ color: '#FFF' }} align="center">Receita</TableCell>
+              <TableCell sx={{ color: '#FFF' }} align="center">Salario</TableCell>
+              <TableCell sx={{ color: '#FFF' }} align="center">R$1000</TableCell>
+            </TableRow>
+            <TableRow
+              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+            >
+              <TableCell sx={{ color: '#FFF' }} align="center">10/10/2020</TableCell>
+              <TableCell sx={{ color: '#FFF' }} align="center">Receita</TableCell>
+              <TableCell sx={{ color: '#FFF' }} align="center">Salario</TableCell>
+              <TableCell sx={{ color: '#FFF' }} align="center">R$1000</TableCell>
+            </TableRow>
             <TableRow
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
