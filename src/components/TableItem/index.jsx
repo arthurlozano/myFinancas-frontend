@@ -7,9 +7,17 @@ export const TableItem = ({ data, categoria_id, titulo, valor }) => {
       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
     >
       <TableCell sx={{ color: '#FFF' }} align="center">{dataFormatada}</TableCell>
-      <TableCell sx={{ color: '#FFF' }} align="center">{categoria_id}</TableCell>
+      <TableCell
+        sx={categoria_id === 'Receita' ? { color: '#080', fontWeight: 'bold' } : { color: '#B00', fontWeight: 'bold' }}
+        align="center">
+        {categoria_id}
+      </TableCell>
       <TableCell sx={{ color: '#FFF' }} align="center">{titulo}</TableCell>
-      <TableCell sx={{ color: '#FFF' }} align="center">R${valor}</TableCell>
+      <TableCell
+        sx={categoria_id === 'Receita' ? { color: '#080', fontWeight: 'bold' } : { color: '#B00', fontWeight: 'bold' }}
+        align="center">
+        R${valor}
+      </TableCell>
     </TableRow>
   )
 }

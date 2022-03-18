@@ -8,6 +8,14 @@ import TableRow from '@mui/material/TableRow';
 import './styles.css'
 import { TableItem } from '../TableItem';
 
+const tableStyle = {
+  color: '#BBB',
+  backgroundColor: 'transparent',
+
+  backdropFilter: '5px',
+  fontWeight: 'bold',
+}
+
 export function InfoTable({ listaContas }) {
   return (
     <div className="container-infoTable">
@@ -16,13 +24,13 @@ export function InfoTable({ listaContas }) {
         color: '#fff',
         borderRadius: 10,
       }} */>
-        <Table size="small" aria-label="a dense table">
+        <Table stickyHeader size="small" aria-label="a dense table">
           <TableHead>
             <TableRow>
-              <TableCell sx={{ color: '#FFF' }} align="center">Data</TableCell>
-              <TableCell sx={{ color: '#FFF' }} align="center">Categoria</TableCell>
-              <TableCell sx={{ color: '#FFF' }} align="center">Título</TableCell>
-              <TableCell sx={{ color: '#FFF' }} align="center">Valor</TableCell>
+              <TableCell sx={tableStyle} align="center">Data</TableCell>
+              <TableCell sx={tableStyle} align="center">Categoria</TableCell>
+              <TableCell sx={tableStyle} align="center">Título</TableCell>
+              <TableCell sx={tableStyle} align="center">Valor</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

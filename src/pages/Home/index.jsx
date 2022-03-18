@@ -11,7 +11,7 @@ export function Home() {
 
   useEffect(() => {
     api.get('/listar/conta', {
-      "limite": 10,
+      "limite": 100,
       "pagina": 0
     }).then(res => {
       console.log(res.data.rows);
@@ -20,6 +20,7 @@ export function Home() {
   }, [])//verificar execução de conta que só aparece no refresh
   function handleSaveItems(item) {
     const data = item.dados;
+    console.log(data);
 
 
     api.post('/criar/conta', data).then(res => {

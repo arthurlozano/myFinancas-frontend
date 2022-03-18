@@ -24,7 +24,13 @@ export function InputsContainer({ addItems }) {
       titulo,
       valor
     }
+    console.log({ "Dados_handleAddItems": dados });
     addItems({ dados });
+  }
+
+  function setCorretamenteData(data) {
+    console.log(data);
+    setData(data);
   }
 
   return (
@@ -34,7 +40,7 @@ export function InputsContainer({ addItems }) {
         <input
           type="date"
           value={data}
-          onChange={e => setData(e.target.value)}
+          onChange={e => setCorretamenteData(e.target.value)}
         />
       </div>
 
