@@ -6,8 +6,9 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import './styles.css'
+import { TableItem } from '../TableItem';
 
-export function InfoTable() {
+export function InfoTable({ listaContas }) {
   return (
     <div className="container-infoTable">
       <TableContainer /*sx={{
@@ -19,36 +20,22 @@ export function InfoTable() {
           <TableHead>
             <TableRow>
               <TableCell sx={{ color: '#FFF' }} align="center">Data</TableCell>
-              <TableCell sx={{ color: '#FFF' }} align="center">Categoria&nbsp;(g)</TableCell>
-              <TableCell sx={{ color: '#FFF' }} align="center">Título&nbsp;(g)</TableCell>
-              <TableCell sx={{ color: '#FFF' }} align="center">Valor&nbsp;(g)</TableCell>
+              <TableCell sx={{ color: '#FFF' }} align="center">Categoria</TableCell>
+              <TableCell sx={{ color: '#FFF' }} align="center">Título</TableCell>
+              <TableCell sx={{ color: '#FFF' }} align="center">Valor</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            <TableRow
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell sx={{ color: '#FFF' }} align="center">10/10/2020</TableCell>
-              <TableCell sx={{ color: '#FFF' }} align="center">Receita</TableCell>
-              <TableCell sx={{ color: '#FFF' }} align="center">Salario</TableCell>
-              <TableCell sx={{ color: '#FFF' }} align="center">R$1000</TableCell>
-            </TableRow>
-            <TableRow
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell sx={{ color: '#FFF' }} align="center">10/10/2020</TableCell>
-              <TableCell sx={{ color: '#FFF' }} align="center">Receita</TableCell>
-              <TableCell sx={{ color: '#FFF' }} align="center">Salario</TableCell>
-              <TableCell sx={{ color: '#FFF' }} align="center">R$1000</TableCell>
-            </TableRow>
-            <TableRow
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell sx={{ color: '#FFF' }} align="center">10/10/2020</TableCell>
-              <TableCell sx={{ color: '#FFF' }} align="center">Receita</TableCell>
-              <TableCell sx={{ color: '#FFF' }} align="center">Salario</TableCell>
-              <TableCell sx={{ color: '#FFF' }} align="center">R$1000</TableCell>
-            </TableRow>
+            {listaContas.map(conta => (
+              <TableItem
+                key={conta.id}
+                categoria_id={conta.Categorium.descricao}
+                data={conta.data}
+                valor={conta.valor}
+                titulo={conta.titulo} />
+            ))}
+
+
           </TableBody>
         </Table>
       </TableContainer>
