@@ -16,7 +16,10 @@ const tableStyle = {
   fontWeight: 'bold',
 }
 
+
+
 export function InfoTable({ listaContas }) {
+
   return (
     <div className="container-infoTable">
       <TableContainer /*sx={{
@@ -34,14 +37,20 @@ export function InfoTable({ listaContas }) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {listaContas.map(conta => (
+            {listaContas.length === 0 ? (
+              <tr>
+                <td style={{ textAlign: 'center', padding: 10 }}>Nenhuma conta encontrada.</td>
+              </tr>
+            ) : (listaContas.map(conta => (
+
               <TableItem
                 key={conta.id}
                 categoria_id={conta.Categorium.descricao}
                 data={conta.data}
                 valor={conta.valor}
                 titulo={conta.titulo} />
-            ))}
+            ))
+            )}
 
 
           </TableBody>

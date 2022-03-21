@@ -14,7 +14,6 @@ export function Home() {
       "limite": 100,
       "pagina": 0
     }).then(res => {
-      console.log(res.data.rows);
       setListaContas(res.data.rows);
     })
   }, [])//verificar execução de conta que só aparece no refresh
@@ -24,22 +23,32 @@ export function Home() {
 
 
     api.post('/criar/conta', data).then(res => {
-      console.log(res.data);
+      console.log({ msg: "Conta Criada!", Dados: res.data });
     });
     api.get('/listar/conta', {
       "limite": 10,
       "pagina": 0
     }).then(res => {
-      console.log(res.data.rows);
       setListaContas(res.data.rows);
     })
-
+  }
+  function handlePesquisarContasData(data) {
+    api.post(`/listar/conta/data`, {
+      data: {
+        limite: 10,
+        pagina: 0,
+        dataInicial: data.dataInicial,
+        dataFinal: data.dataFinal
+      }
+    }).then(res => {
+      setListaContas(res.data.rows);
+    })
   }
 
   return (
     <div className="container-main">
       <Header />
-      <Information />
+      <Information listaContas={listaContas} onSearch={handlePesquisarContasData} />
       <InputsContainer addItems={handleSaveItems} />
       <InfoTable listaContas={listaContas} />
     </div>

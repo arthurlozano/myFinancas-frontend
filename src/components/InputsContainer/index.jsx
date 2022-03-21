@@ -15,7 +15,7 @@ export function InputsContainer({ addItems }) {
     api.get('/listar/categoria').then(res => {
       setNameCategoria(res.data.rows);
     })
-  }, [])
+  }, [handleAddItems])
 
   function handleAddItems() {
     const dados = {
@@ -28,11 +28,6 @@ export function InputsContainer({ addItems }) {
     addItems({ dados });
   }
 
-  function setCorretamenteData(data) {
-    console.log(data);
-    setData(data);
-  }
-
   return (
     <section className="inputs-container">
       <div className="container-input">
@@ -40,7 +35,7 @@ export function InputsContainer({ addItems }) {
         <input
           type="date"
           value={data}
-          onChange={e => setCorretamenteData(e.target.value)}
+          onChange={e => setData(e.target.value)}
         />
       </div>
 
